@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="a5e9885b-e35c-4fd0-acef-8081f139c63f" name="M3">
+        <fileTransfer accessType="SFTP" host="m3.massive.org.au" port="22" sshConfigId="5efb7c86-6273-4c06-9612-e00b304cbd61" sshConfig="mtra0069@m3.massive.org.au:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="f193db31-ce28-462a-a23d-86836ae93aab" name="m1">
+        <fileTransfer accessType="SFTP" host="130.194.72.8" port="22" sshConfigId="ab73c213-56e6-42de-9e17-1bd47147fb91" sshConfig="tntuan@130.194.72.8:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="80baaa06-f06b-4028-af67-f2c5dbb41839" name="Spartan">
+        <fileTransfer rootFolder="/home/xuanmayl/st/" accessType="SFTP" host="spartan.hpc.unimelb.edu.au" port="22" sshConfigId="f593f6f3-fe4d-4cdb-8d4d-4cc47986e804" sshConfig="xuanmayl@spartan.hpc.unimelb.edu.au:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="ea3c742d-6f7f-4939-bb8c-85504a8d4f63" name="f1">
+        <fileTransfer rootFolder="/home/xuanmayl" accessType="SFTP" host="spartan.hpc.unimelb.edu.au" port="22" sshConfigId="f593f6f3-fe4d-4cdb-8d4d-4cc47986e804" sshConfig="xuanmayl@spartan.hpc.unimelb.edu.au:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

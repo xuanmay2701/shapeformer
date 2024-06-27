@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="m3.massive.org.au" id="5efb7c86-6273-4c06-9612-e00b304cbd61" port="22" nameFormat="DESCRIPTIVE" username="mtra0069" useOpenSSHConfig="true" />
+      <sshConfig authType="PASSWORD" host="spartan.hpc.unimelb.edu.au" id="f593f6f3-fe4d-4cdb-8d4d-4cc47986e804" port="22" nameFormat="DESCRIPTIVE" username="xuanmayl" useOpenSSHConfig="true" />
+      <sshConfig authType="PASSWORD" connectionConfig="{&quot;serverAliveInterval&quot;:300}" host="130.194.72.8" id="ab73c213-56e6-42de-9e17-1bd47147fb91" port="22" nameFormat="DESCRIPTIVE" username="tntuan" useOpenSSHConfig="true" />
+    </configs>
+  </component>
+</project>
