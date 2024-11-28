@@ -28,7 +28,7 @@ parser.add_argument('--seed', default=1234, type=int, help='Seed used for splitt
 parser.add_argument("--window_size", default=100, type=float, help="window size")
 parser.add_argument("--num_pip", default=0.5, type=float, help="number of pips")
 parser.add_argument("--processes", default=1, type=int, help="number of processes for extracting shapelets")
-parser.add_argument("--dataset_pos", default=21, type=int, help="number of processes for extracting shapelets")
+parser.add_argument("--dataset_pos", default=1, type=int, help="number of processes for extracting shapelets")
 
 parser.add_argument("--is_extract_candidate", default=1, type=int, help="is extract candidate?")
 parser.add_argument("--dis_flag", default=1, type=int, help="is extract candidate?")

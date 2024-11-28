@@ -4,7 +4,7 @@
 
 ### Shapelet discovery
 ```
-python cpu_main.py --dataset_pos=[dataset_pos] --num_shapelet=[num_shapelet] --window_size=[window_size]
+python cpu_main.py --dataset_pos=[dataset_pos] --window_size=[window_size]
 ```
 
 ### Model training

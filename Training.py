@@ -242,15 +242,15 @@ def train_runner(config, model, trainer, val_evaluator, path):
     for epoch in tqdm(range(start_epoch, epochs), desc='Epoch',mininterval=0.01):
         training_time = time.time()
         aggr_metrics_train = trainer.train_epoch(epoch)  # dictionary of aggregate epoch metrics
-        # scheduler.step()
-        logger.info("training time: %s" % (time.time() - training_time))
-        print("training time: %s" % (time.time() - training_time))
+        scheduler.step()
+        # logger.info("training time: %s" % (time.time() - training_time))
+        # print("training time: %s" % (time.time() - training_time))
 
         testing_time = time.time()
         aggr_metrics_val, best_metrics, best_value = validate(val_evaluator, tensorboard_writer, config, best_metrics,
                                                               best_value, epoch)
-        print("testing time: %s" % (time.time() - testing_time))
-        logger.info("testing time: %s" % (time.time() - testing_time))
+        # print("testing time: %s" % (time.time() - testing_time))
+        # logger.info("testing time: %s" % (time.time() - testing_time))
         # save_best_model(aggr_metrics_val['loss'], epoch, model, optimizer, loss_module, path)
         save_best_acc_model(aggr_metrics_val['accuracy'], epoch, model, optimizer, loss_module, path)
 

@@ -24,7 +24,7 @@ def model_factory(config):
                                         len_ts=config['len_ts'], num_classes=config['num_labels'],
                                         sge=config['sge'], window_size=config['window_size'])
         config['shapelets'] = None
-    elif config['Net_Type'][0] ==  "ST":
+    elif config['Net_Type'][0] ==  "Shapeformer":
         model = Shapeformer(config, num_classes=config['num_labels'])
     return model
 
@@ -33,7 +33,7 @@ class ShapeBlock(nn.Module):
         super(ShapeBlock, self).__init__()
         self.dim = shapelet_info[5]
         self.shape_embed_dim = shape_embed_dim
-        self.shapelet = torch.nn.Parameter(torch.tensor(shapelet), requires_grad=True)
+        self.shapelet = torch.nn.Parameter(torch.tensor(shapelet, dtype=torch.float32), requires_grad=True)
         # window_size = 0
         self.window_size = window_size
         self.norm = norm
@@ -51,7 +51,8 @@ class ShapeBlock(nn.Module):
         self.end_position = int(shapelet_info[2] + window_size)
         self.end_position = self.end_position if self.end_position < len_ts else len_ts
 
-        self.l1 = nn.Linear(self.kernel_size,shape_embed_dim)
+        self.l1 = nn.Linear(self.kernel_size, shape_embed_dim)
+        self.l2 = nn.Linear(self.kernel_size, shape_embed_dim)
 
 
 
@@ -81,6 +82,10 @@ class ShapeBlock(nn.Module):
         pis = pis.view(x.size(0), -1, self.kernel_size)
         out = pis[torch.arange(int(x.size(0))).to(torch.long).cuda(), index.to(torch.long)]
         out = self.l1(out)
+
+        out_s = self.l2(self.shapelet.unsqueeze(0))
+
+        out = out - out_s
 
         return out.view(x.shape[0],1,-1)
 

@@ -7,6 +7,8 @@ def get_optimizer(name):
 
     if name == "Adam":
         return torch.optim.Adam
+    elif name == "AdamW":
+        return AdamW
     elif name == "RAdam":
         return RAdam
 
